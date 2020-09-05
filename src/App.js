@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Column from "./components/column/Column";
 import logo from './assets/hr_logo.png';
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
               <span className="App-header-title">Kanban Board</span>
       </header>
       <div className="App-content">
-
+            <Column title="Title" />
       </div>
     </div>
   );
