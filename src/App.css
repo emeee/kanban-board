@@ -6,19 +6,18 @@
   background-color: #282c34;
   height: 60px;
   display: block;
+  font-size: 30px;
+  color: white;
+  padding: 2px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 30px;
-  color: white;
 }
 
 .App-header-logo {
   height: 40px;
   width: 40px;
   display: inline;
-  position: relative;
-  top: 8px;
 }
 
 .App-header-title {
@@ -28,5 +27,35 @@
 }
 
 .App-content {
-  margin-top: 10px;
+
+}
+
+.App-input {
+  height: 170px;
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+}
+
+.App-input-text {
+  background: #d9d9d9;
+  border: none;
+  height: 50px;
+  outline: None;
+  margin-right: 30px;
+  padding: 10px;
+}
+
+.App-input-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  height: 60px;
 }

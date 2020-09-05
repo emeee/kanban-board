@@ -1,0 +1,38 @@
+.column-container {
+    width: 250px;
+    height: 500px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.column-name {
+    width: inherit;
+    height: 100px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.tasks-container {
+    background: #efefef;
+    padding: 15px;
+}
+
+.task {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #ffffff;
+    clear: both;
+    text-align: left;
+}
+
+.actions-container {
+    float: right;
+}
+
+.action-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 4px;
+}

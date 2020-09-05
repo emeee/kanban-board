@@ -22,7 +22,7 @@ const board = [
     }
 ]
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -30,6 +30,10 @@ function App() {
               <span className="App-header-title">Kanban Board</span>
       </header>
       <div className="App-content container">
+          <div className="App-input">
+              <input className="App-input-text" type="text" name="name" placeholder="New task name" />
+              <input className="App-input-button" type="submit" value="Create task"/>
+          </div>
           <div className="row">
               {board && board.map(column =>
                   <div className="col-sm-12 col-md-3 col-lg-3">
