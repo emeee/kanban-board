@@ -3,6 +3,8 @@ import './App.css';
 import Column from "./components/column/Column";
 import logo from './assets/hr_logo.png';
 
+const INITIAL_COLUMN_INDEX = 0;
+
 const initialBoard = [
   {
     title: 'Backlog',
@@ -27,26 +29,32 @@ const App = () => {
   const [board, setBoard] = useState(initialBoard);
 
   const onNext = (columnId, taskId) => {
-    if(columnId > board.length) return null;
+    if(columnId > board.length - 1) return null;
 
-    // TODO: Implement
+    const taskName = board[columnId].tasks.find((task, index) => index === taskId).title;
+
+    deleteTask(columnId, taskId);
+    createTask(columnId + 1, taskName);
   }
 
   const onBack = (columnId, taskId) => {
     if(columnId <= 0) return null;
 
-    // TODO: Implement
+    const taskName = board[columnId].tasks.find((task, index) => index === taskId).title;
+
+    deleteTask(columnId, taskId);
+    createTask(columnId - 1, taskName);
   }
 
-  const onDelete = (columnId, taskId) => {
+  const deleteTask = (columnId, taskId) => {
     const newBoard = [...board];
     newBoard[columnId].tasks.splice(taskId, 1);
     setBoard(newBoard);
   }
 
-  const createTask = (name) => {
+  const createTask = (columnId, name) => {
     const newBoard = [...board];
-    newBoard[0].tasks.push({ title: name });
+    newBoard[columnId].tasks.push({ title: name });
     setBoard(newBoard);
     setNewTask("");
   }
@@ -76,10 +84,10 @@ const App = () => {
             disabled={!newTask || newTask === ""}
             type="submit"
             value="Create task"
-            onClick={() => createTask(newTask) }/>
+            onClick={() => createTask(INITIAL_COLUMN_INDEX, newTask) }/>
         </div>
         <div className="row">
-          {board && board.map((column,index) =>
+          {board && board.map((column, index) =>
             <div className="col-sm-12 col-md-3 col-lg-3">
               <Column
                 id={index}
@@ -87,7 +95,7 @@ const App = () => {
                 tasks={column.tasks}
                 onBack={onBack}
                 onNext={onNext}
-                onDelete={onDelete}
+                onDelete={deleteTask}
               />
             </div>
           )}

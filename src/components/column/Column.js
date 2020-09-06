@@ -33,9 +33,9 @@ const Task = ({id, title, columnId, onBack, onNext, onDelete}) => {
     <div className="task">
       <span>{title}</span>
       <div className="actions-container">
-        <img src={leftArrow} alt="Back" className="action-icon" onClick={() => onBack(id, columnId)}/>
-        <img src={rightArrow} alt="Next" className="action-icon" onClick={() => onNext(id, columnId)}/>
-        <img src={trash} alt="Delete" className="action-icon" onClick={() => onDelete(id, columnId)}/>
+        <img src={leftArrow} alt="Back" className="action-icon" onClick={() => onBack(columnId, id)}/>
+        <img src={rightArrow} alt="Next" className="action-icon" onClick={() => onNext(columnId, id)}/>
+        <img src={trash} alt="Delete" className="action-icon" onClick={() => onDelete(columnId, id)}/>
       </div>
     </div>
   );
